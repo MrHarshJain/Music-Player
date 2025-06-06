@@ -9,7 +9,8 @@ const durationEl = document.getElementById('duration');
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById('next');
 const playPause = document.getElementById('play');
-
+const volumeSliderEl = document.getElementById('volumeSlider');
+const volumeValueEl = document.getElementById('volumeValue');
 
 // Music 
 const song = [
@@ -108,7 +109,7 @@ function updateProgressBar(e){
         }
         // Delay switiching the duration element to avoid NaN
         if(durationSeconds){
-            durationEl.textContent =`${durationMinutes}:${durationSeconds}`
+            durationEl.textContent =`${durationMinutes}:${durationSeconds}`;
         }
         // Calculate display for current time
         const currentMinutes = Math.floor(currentTime/60);
@@ -116,11 +117,30 @@ function updateProgressBar(e){
         if(currentSeconds<10){
             currentSeconds =  `0${Math.floor(currentTime%60)}`;
             }
-        currentTimeEl.textContent = `${currentMinutes}:${currentSeconds}`
+        currentTimeEl.textContent = `${currentMinutes}:${currentSeconds}`;
     }
 }
+
+// Set Progress Bar
+   function setProgressBar(e){
+     const width = this.clientWidth;
+     const clickX = e.offsetX;
+     const {duration} = music;
+     music.currentTime = (clickX/width)*duration;
+   };
+
+// Control song Volume
+    volumeSliderEl.addEventListener('input', function () {
+      const volume = parseFloat(this.value);
+      music.volume = volume;
+      volumeValueEl.textContent = Math.round(volume * 100) + '%';
+    });
+    // Optional: Initialize with current value
+    music.volume = parseFloat(volumeSliderEl.value);
 
 // Event Listerner
 prevBtn.addEventListener('click',prevSong);
 nextBtn.addEventListener('click',nextSong);
-music.addEventListener('timeupdate', updateProgressBar)
+music.addEventListener('timeupdate', updateProgressBar);
+progressContainerEl.addEventListener('click',setProgressBar);
+music.addEventListener('ended',nextSong);

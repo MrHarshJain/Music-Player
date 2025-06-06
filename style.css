@@ -18,7 +18,7 @@ body {
 }
 
 .player-container{
-  height: 500px;
+  height: 535px;
   width: 400px;
   background: #edeef1;
   border-radius: 20px;
@@ -29,7 +29,7 @@ body {
   height: 300px;
   width: 300px;
   position: relative;
-  top: -50px;
+  top: -34px;
   left: 50px;
 
 }
@@ -56,7 +56,7 @@ h3 {
 
 /* Progress */
 .progress-container {
-  background: #fff;
+  background: #e1d7d7;
   border-radius: 5px;
   cursor: pointer;
   margin: 40px 20px;
@@ -102,6 +102,16 @@ h3 {
   font-size: 40px;
   position: relative;
   top: 3px;
+}
+
+/* Volume Control */
+.volume-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 700;
 }
 
 /* Media Query: iPhone (Vertical) */
