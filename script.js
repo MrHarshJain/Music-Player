@@ -15,24 +15,24 @@ const volumeValueEl = document.getElementById('volumeValue');
 // Music 
 const song = [
     {
-        name: 'jacinto-1',
-        displayName: 'Electric Chill Machine',
-        artist: 'Jacito Design'
+        name: 'Aam Jahe Munde - Parmish Verma',
+        displayName: 'Aam Jahe Munde',
+        artist: 'Parmish Verma'
     },
     {
-        name: 'jacinto-2',
-        displayName: 'Seven Nation Army (Remix)',
-        artist: 'Jacito Design'
+        name: 'Masakali',
+        displayName: 'Masakali 2.O',
+        artist: 'Mohit Chauhan'
     },
     {
-        name: 'jacinto-3',
-        displayName: 'Goodnight, Disco Queen',
-        artist: 'Jacito Design',
+        name: 'Tauba Tauba',
+        displayName: 'Tauba Tauba',
+        artist: 'Karan Aujla',
     },
     {
-        name: 'metric-1',
-        displayName: 'Front Row(Remix)',
-        artist: 'Metric/Jacito Design',
+        name: 'Sheila Ki Jawani',
+        displayName: 'Sheila Ki Jawani',
+        artist: 'Sunidhi Chauhan',
     },
 ]
 
